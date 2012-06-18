@@ -71,7 +71,7 @@ class KM(object):
 
     def _request(self, type, data, update=True):
         def errback(e):
-            raise KMError(e.message)
+            raise KMError(str(e))
 
         # if user has defined their own _t, then include necessary _d
         if '_t' in data:
